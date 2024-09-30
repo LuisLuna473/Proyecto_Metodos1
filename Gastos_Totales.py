@@ -9,7 +9,7 @@ gastos = np.array([26334.40, 27617.95, 28901.50, 33141.80, 37382.10, 40835.40,
                    60883.30, 63814.70, 67710.60, 72174.60, 79963.20, 88088.50, 
                    96213.80, 104339.10, 112464.40])
 
-# Ajustar un polinomio de grado 3 (puedes ajustar el grado según necesites)
+# Ajustar un polinomio de grado 3
 coeficientes = np.polyfit(años, gastos, 3)
 
 # Crear un objeto polinómico
@@ -19,14 +19,19 @@ polinomio = np.poly1d(coeficientes)
 def evaluar_en_año(año):
     return polinomio(año)
 
-# Ejemplo de evaluación para el año 2025
-año_a_evaluar = 2025
-gasto_estimado = evaluar_en_año(año_a_evaluar)
+# Evaluaciones para los años 2024 y 2025
+año_2024 = 2024
+año_2025 = 2025
+
+gasto_estimado_2024 = evaluar_en_año(año_2024)
+gasto_estimado_2025 = evaluar_en_año(año_2025)
 
 # Imprimir el polinomio
-print("Polinomio de Lagrange:")
+print("Polinomio de Lagrange (grado 3):")
 print(polinomio)
 
-# Imprimir el gasto estimado
-print(f"Gasto estimado para el año {año_a_evaluar}: {gasto_estimado:.2f}")
+# Imprimir los gastos estimados
+print(f"Gasto estimado para el año {año_2024}: {gasto_estimado_2024:.2f}")
+print(f"Gasto estimado para el año {año_2025}: {gasto_estimado_2025:.2f}")
+
 
